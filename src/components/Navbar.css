@@ -1,0 +1,22 @@
+.nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 auto;
+    background-color: rgb(88, 121, 30);
+    text-decoration: none;
+    border-bottom: 1px solid black;
+}
+
+.button {
+    padding: 15px 30px;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    transition: background 0.8s;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: rgb(85, 171, 54);
+}
