@@ -1,0 +1,8 @@
+.loginBox {
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+    color: rgb(88, 121, 30);
+    text-decoration: none;
+    border: 1px solid black;
+}
