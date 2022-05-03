@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import apiUtils from "../utils/api.utils";
 
-const UserProfile = ({ _id, name, email, gender, image }) => {
+const UserProfile = ({ _id, name, email, gender, image, vegan }) => {
   const [file, setFile] = useState();
   const [imageUrl, setImageUrl] = useState("");
 
@@ -44,7 +44,7 @@ const UserProfile = ({ _id, name, email, gender, image }) => {
       <div>{name}</div>
       <div>{email}</div>
       <div>{gender}</div>          
-      
+      <div>{vegan}</div>
     </>
   );
 };
