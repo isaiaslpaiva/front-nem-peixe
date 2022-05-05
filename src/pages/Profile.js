@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router';
 import apiUtils from '../utils/api.utils'
 
-import ProfileUser from '../components/ProfileUser'
+import ProfileUser from '../components/Profile'
 
 const Profile = () => {
   const [ user, setUser ] = useState({});
@@ -29,4 +29,4 @@ const Profile = () => {
   )
 }
 
-export default Profile
+export default Profile;

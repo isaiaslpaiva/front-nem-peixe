@@ -18,7 +18,7 @@ const FormLogin = () => {
     try {
       await apiUtils.login({email, password});
       resetForm();
-      navigate('/private/')
+      navigate('/private/perfil')
     } catch (error) {
       console.log(error.status)
     }

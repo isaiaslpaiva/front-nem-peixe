@@ -33,6 +33,25 @@ class Api {
     )
   }
 
+  login = async (user) => {
+    try {
+      const { data } = await this.api.post('/auth/login', user);
+      localStorage.setItem('token', data.token)
+      return data;
+    } catch (error) {
+      throw error.response;
+    }
+  }
+
+  signup = async (signupInfo) => {
+    try {
+        const { data } = await this.api.post("/auth/signup", signupInfo)
+        return data;
+    } catch (error) {
+        throw error.response;
+    }
+  }
+
   addProduct = async (title) => {
     try {
       const { data } = await this.api.post('/products', { title });
@@ -67,20 +86,18 @@ class Api {
     }
   }
 
-  login = async (user) => {
+  getProfile = async (id) => {
     try {
-      const { data } = await this.api.post('/auth/login', user);
-      localStorage.setItem('token', data.token)
-      localStorage.setItem('user', JSON.stringify(data.user))
-      return data;
+      const {data} = await this.api.get(`/user/${id}`);
+      return data
     } catch (error) {
       throw error.response;
     }
   }
 
-  getProfile = async () => {
+  getUser = async (id) => {
     try {
-      const {data} = await this.api.get('/user');
+      const {data} = await this.api.get(`/user/${id}`);
       return data
     } catch (error) {
       throw error.response;
