@@ -45,6 +45,12 @@ const FormLogin = () => {
         />
       </div>
       <button type="submit">submit</button>
+      <h4 className="account-text">Ainda não possui conta?</h4>
+            <div className="btn">
+              <Link to={`/login`}>
+                <button>Login</button>
+              </Link>
+            </div>
     </form>
   );
 };
