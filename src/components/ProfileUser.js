@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import apiUtils from "../utils/api.utils";
+import "./ProfileUser.css";
 
-const UserProfile = ({ _id, name, email, gender, image, vegan }) => {
+const ProfileUser = ({ name, email, gender, image, youAre }) => {
   const [file, setFile] = useState();
   const [imageUrl, setImageUrl] = useState("");
 
@@ -28,25 +29,33 @@ const UserProfile = ({ _id, name, email, gender, image, vegan }) => {
 
   return (
     <>
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        <label htmlFor="change-img">Change Image</label>
+      <div className='sec-1'>
+        
         <input id="change-img" type="file" onChange={handleChangeImg} />
         {imageUrl ? (
           <>
-            <img src={imageUrl} alt="new profile" width="200" height="200" />
-            <button onClick={handleUpdateImg}>Update Image</button>
+            <img src={imageUrl} alt="new profile" className="profile-img" />
+            <button onClick={handleUpdateImg}>Save Image</button>
           </>
         ) : null}
       </div>
       <div>
         <img src={image} alt={name} width="200" height="200" />
       </div>
-      <div>{name}</div>
-      <div>{email}</div>
-      <div>{gender}</div>          
-      <div>{vegan}</div>
+      <div>Nome:
+        {name}
+      </div>
+      <div>E-mail cadastrado:
+        {email}
+      </div>
+      <div>Gênero:
+        {gender}
+      </div>          
+      <div>Você é:
+        {youAre}
+      </div>
     </>
   );
 };
 
-export default UserProfile;
+export default ProfileUser;

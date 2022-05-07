@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import apiUtils from "../utils/api.utils";
 
 const FormLogin = () => {
@@ -18,7 +18,7 @@ const FormLogin = () => {
     try {
       await apiUtils.login({email, password});
       resetForm();
-      navigate('/private/')
+      navigate('/private/perfil')
     } catch (error) {
       console.log(error.status)
     }
@@ -44,7 +44,13 @@ const FormLogin = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-      <button type="submit">submit</button>
+      <button type="submit">Entrar</button>
+
+            <div className="btn" >
+              <Link to={`/cadastre-se`}>
+                <button>Criar uma conta</button>
+              </Link>
+            </div>
     </form>
   );
 };

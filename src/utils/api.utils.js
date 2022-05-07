@@ -33,18 +33,47 @@ class Api {
     )
   }
 
-  addProduct = async (title) => {
+  login = async (user) => {
     try {
-      const { data } = await this.api.post('/products', { title });
+      const { data } = await this.api.post('/auth/login', user);
+      localStorage.setItem('token', data.token)
+      localStorage.setItem('user', JSON.stringify(data.user))
       return data;
     } catch (error) {
       throw error.response;
     }
   }
 
+  signup = async (signupInfo) => {
+    try {
+        const { data } = await this.api.post("/auth/signup", signupInfo)
+        return data;
+    } catch (error) {
+        throw error.response;
+    }
+  }
+
   getProducts = async () => {
     try {
-      const { data } = await this.api.get('/products')
+      const { data } = await this.api.get('/dbproducts')
+      return data;
+    } catch (error) {
+      throw error.response;
+    }
+  }
+
+  getOneProduct = async (id) => {
+    try{
+        const {data} = await this.api.get(`/dbproducts/${id}`)
+        return data
+    } catch (error){
+        throw error
+    }
+}
+
+  addProduct = async (title) => {
+    try {
+      const { data } = await this.api.post('/products', { title });
       return data;
     } catch (error) {
       throw error.response;
@@ -59,28 +88,18 @@ class Api {
     }
   }
 
-  deleteProduct = async (id) => {
+  getProfile = async (id) => {
     try {
-      await this.api.delete(`/products/${id}`)
+      const {data} = await this.api.get(`/user/${id}`);
+      return data
     } catch (error) {
       throw error.response;
     }
   }
 
-  login = async (user) => {
+  getUser = async (id) => {
     try {
-      const { data } = await this.api.post('/auth/login', user);
-      localStorage.setItem('token', data.token)
-      localStorage.setItem('user', JSON.stringify(data.user))
-      return data;
-    } catch (error) {
-      throw error.response;
-    }
-  }
-
-  getProfile = async () => {
-    try {
-      const {data} = await this.api.get('/user');
+      const {data} = await this.api.get(`/user/${id}`);
       return data
     } catch (error) {
       throw error.response;
