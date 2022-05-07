@@ -9,7 +9,8 @@ root.render(
   <Router>
   <React.StrictMode>
     <App />
-  </React.StrictMode></Router>,
+  </React.StrictMode>
+  </Router>,
   
 );
 

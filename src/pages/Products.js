@@ -1,12 +1,12 @@
 import React from 'react'
-import Products from '../components/Products'
-import './Login.css'
+import ProductsCard from '../components/ProductsCard.js'
 
 const DbProducts = () => {
+
+
   return (
     <div className='Products'>
-      <h1>Products</h1>
-      <Products />
+      <ProductsCard />
 
     </div>
   )

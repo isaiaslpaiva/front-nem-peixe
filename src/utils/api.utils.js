@@ -63,7 +63,7 @@ class Api {
 
   getProducts = async () => {
     try {
-      const { data } = await this.api.get('/products')
+      const { data } = await this.api.get('/dbproducts')
       return data;
     } catch (error) {
       throw error.response;

@@ -120,7 +120,7 @@ const SignupForm = () => {
             <button type="submit" className="btn2" >
               REGISTER
             </button>
-            <h4 className="account-text">Already have an account?</h4>
+            <h4 className="account-text">Já possui uma conta?</h4>
             <div className="btn">
               <Link to={`/login`}>
                 <button>Login</button>
