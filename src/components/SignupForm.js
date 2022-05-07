@@ -32,7 +32,7 @@ const SignupForm = () => {
               <input
                 type="text"
                 id="name"
-                placeholder="name"
+                placeholder="Nome"
                 onChange={e => setName(e.target.value)}
                 autoComplete="off"
               ></input>
@@ -40,7 +40,7 @@ const SignupForm = () => {
             <div className="formGroup">
               <input
                 type="email"
-                placeholder="Email"
+                placeholder="E-mail"
                 name="email"
                 onChange={e => setEmail(e.target.value)}
                 autoComplete="off"
@@ -50,12 +50,13 @@ const SignupForm = () => {
               <input
                 type="password"
                 id="password"
-                placeholder="Password"
+                placeholder="Senha"
                 onChange={e => setPassword(e.target.value)}
                 autoComplete="off"
               ></input>
             </div>
             <div className="formGroup">
+            <h3>Gênero</h3>
               <input
                 type="radio"
                 id="Masculino"
@@ -82,6 +83,7 @@ const SignupForm = () => {
               <label htmlFor="Não-Binário">Não-Binário</label>
             </div>
             <div className="formGroup">
+            <h3>Você é:</h3>
               <input
                 type="radio"
                 id="Vegan"

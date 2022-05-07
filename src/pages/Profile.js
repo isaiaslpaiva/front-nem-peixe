@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router';
 import apiUtils from '../utils/api.utils'
-
-import ProfileUser from '../components/Profile'
+import ProfileUser from '../components/ProfileUser.js'
 
 const Profile = () => {
   const [ user, setUser ] = useState({});

@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
+import "./Home.css";
 
 const Home = () => {
+
   return (
-    <div>
-      <h1>Home</h1>
+    <div className='Home'>
+
+      <div>
+      <p> Bem Vindo a Nem Peixe!</p>
+
+      </div>
 
     </div>
   )

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import apiUtils from "../utils/api.utils";
+import "./ProfileUser.css";
 
-const Profile = ({ name, email, gender, image, youAre }) => {
+const ProfileUser = ({ name, email, gender, image, youAre }) => {
   const [file, setFile] = useState();
   const [imageUrl, setImageUrl] = useState("");
 
@@ -39,17 +40,22 @@ const Profile = ({ name, email, gender, image, youAre }) => {
         ) : null}
       </div>
       <div>
-        <img src={image} alt={name}/>
-      </div>
-      <div>
         <img src={image} alt={name} width="200" height="200" />
       </div>
-      <div>{name}</div>
-      <div>{email}</div>
-      <div>{gender}</div>          
-      <div>{youAre}</div>
+      <div>Nome:
+        {name}
+      </div>
+      <div>E-mail cadastrado:
+        {email}
+      </div>
+      <div>Gênero:
+        {gender}
+      </div>          
+      <div>Você é:
+        {youAre}
+      </div>
     </>
   );
 };
 
-export default Profile;
+export default ProfileUser;

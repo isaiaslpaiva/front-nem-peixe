@@ -37,6 +37,7 @@ class Api {
     try {
       const { data } = await this.api.post('/auth/login', user);
       localStorage.setItem('token', data.token)
+      localStorage.setItem('user', JSON.stringify(data.user))
       return data;
     } catch (error) {
       throw error.response;
@@ -52,15 +53,6 @@ class Api {
     }
   }
 
-  addProduct = async (title) => {
-    try {
-      const { data } = await this.api.post('/products', { title });
-      return data;
-    } catch (error) {
-      throw error.response;
-    }
-  }
-
   getProducts = async () => {
     try {
       const { data } = await this.api.get('/dbproducts')
@@ -70,17 +62,27 @@ class Api {
     }
   }
 
-  updateProduct = async (id, product) => {
+  getOneProduct = async (id) => {
+    try{
+        const {data} = await this.api.get(`/dbproducts/${id}`)
+        return data
+    } catch (error){
+        throw error
+    }
+}
+
+  addProduct = async (title) => {
     try {
-      await this.api.put(`/products/${id}`, product);
+      const { data } = await this.api.post('/products', { title });
+      return data;
     } catch (error) {
       throw error.response;
     }
   }
 
-  deleteProduct = async (id) => {
+  updateProduct = async (id, product) => {
     try {
-      await this.api.delete(`/products/${id}`)
+      await this.api.put(`/products/${id}`, product);
     } catch (error) {
       throw error.response;
     }

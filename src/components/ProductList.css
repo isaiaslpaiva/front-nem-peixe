@@ -1,0 +1,10 @@
+.tudo {
+    display: flex;
+    flex-direction: column;
+    width: 80vh;
+}
+
+.product-link {
+    flex-direction: row;
+}
+
